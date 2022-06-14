@@ -1,0 +1,24 @@
+<mat-card>
+    <mat-card-header>
+        <mat-card-title> {{ comic?.title }} </mat-card-title>
+        <!-- <mat-card-subtitle> {{ comic?.description }} </mat-card-subtitle> -->
+    </mat-card-header>
+
+    <img mat-card-image [src]="comic?.thumbnail?.path + '.' + comic?.thumbnail?.extension">
+
+    <mat-card-content>
+        <p>
+            <strong>En venta desde: {{ comic ? (comic.dates[0].date | date: 'dd/MM/yyyy') : '' }}</strong> 
+            <br>
+            <strong>Número de páginas: {{ comic?.pageCount }}</strong> 
+        </p>
+    </mat-card-content>
+    <mat-card-actions fxLayoutAlign="right">
+        <button mat-raised-button
+                disabled 
+                color="warn"
+                [routerLink]="['/comics', comic?.id ]">
+            Leer más...
+        </button>
+    </mat-card-actions>
+</mat-card>

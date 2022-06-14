@@ -1,0 +1,19 @@
+<div class="cards" fxLayout="row wrap"
+     fxLayout.xs="column"
+     fxLayoutGap="20px">
+     <mat-divider></mat-divider>
+
+    <div fxFlex="20"
+         fxFlex.lg="15"
+         fxFlex.sm="30"
+         *ngFor="let section of sections">
+       
+         <mat-card class="example-card" routerLink="{{section?.link}}">
+            <img mat-card-image [src]="section?.img">
+
+            <mat-card-content>
+              <h3>{{section.name}}</h3>
+            </mat-card-content>
+          </mat-card>
+    </div>
+</div>

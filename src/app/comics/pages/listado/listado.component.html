@@ -1,0 +1,21 @@
+<div
+  fxLayout="row wrap"
+  fxLayout.xs="column"
+  fxLayoutAlign="center"
+  fxLayoutGap="20px"
+>
+  <div fxFlex="20" fxFlex.lg="15" fxFlex.sm="30" *ngFor="let comic of comics">
+    <app-comic-card [comic]="comic"></app-comic-card>
+  </div>
+</div>
+
+<mat-paginator
+  #paginator
+  [length]="length"
+  [pageSize]="pageSize"
+  [pageIndex]="pageIndex"
+  [pageSizeOptions]="pageSizeOptions"
+  (page)="pageEvent = getComics($event)"
+  aria-label="Select page"
+>
+</mat-paginator>

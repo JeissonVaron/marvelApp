@@ -1,0 +1,7 @@
+.cards {
+  padding-top: 20px;
+}
+
+mat-card {
+  cursor: pointer;
+}
